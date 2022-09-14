@@ -1,0 +1,1 @@
+{"rule":"IT_IS","sentence":"^\\QA definition of the system could be: An intelligent robot, equipped with sensors for perceiving its and its objectives' positions, reflection - ability to classify ripe and unripe fruit as well as path and obstacles.\\E$"}

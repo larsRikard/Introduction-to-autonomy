@@ -1,0 +1,257 @@
+%% sample template file for a MSc Thesis
+%% The default is with two sided setup:
+\documentclass[%
+oneside,    %% uncomment for onesided layout
+project,    %% uncomment not thesis but project report
+nosummary   %% uncomment if no summary page should be generated
+]{USN-MSc}
+
+% The following command removes the chapter names form the header
+% (comment/remove) if you prefer to have them:
+\pagestyle{plain}
+
+% --- Bibliography setup ---
+%%% default is the "ieee" style
+\usepackage[style=ieee, sorting=none]{biblatex}
+%%% If you want to use "author-year" style
+%%% where `\cite{Foo2011}` generates "Foo et al. (2011)"
+%%% and   `\parencite{Foo2011}` generates "(Foo et al. 2011)"
+%%% then comment the line above and use
+%\usepackage[style=authoryear]{biblatex}
+%%% or
+%%% if you want to use "alphabetic" style then use
+%%% where `cite[Foo2011]` generates "[Foo11]"
+%%% then comment the line above and use
+%\usepackage[style=alphabetic]{biblatex}
+%%% instead.
+%% load the bib file:
+\addbibresource{sources.bib}
+
+\usepackage{lipsum} % just for providing fill text used in this template
+\usepackage{array} % for adjusting tables?
+
+% --- general setup ---
+%% Please fill in the following parameters:
+\newcommand{\mytitle}{%
+%% title:
+yoyoyo
+}
+
+\newcommand{\mysubtitle}{%
+%% master programme (for thesis only)
+%% uncomment the appropriate one:
+%%Electrical Power Engineering
+%Energy and Environmental Technology
+%Industrial IT and Automation
+%Process Technology
+}
+
+\newcommand{\mykeywords}{%
+%% keywords (for thesis only):
+<keyword one, keyword two, \ldots>
+}
+
+\newcommand{\myauthor}{%
+%% author(thesis) or group code (project):
+223786 Lars Rikard Rådstoga
+}
+
+\newcommand{\myparticipants}{
+%% group participants (for project only)
+<First participant>\\
+<Second participant>\\
+<Third participant>\\
+<Fourth participant>
+}
+
+\newcommand{\supervisor}{%
+%% supervisor:
+<Supervisor's Name>}
+
+\begin{document}
+
+% --- title page setup ---
+\USNtitlepage%
+%% Please provide the following information:
+%% #1 optional figure (set to {} if not wanted)
+{%
+  {\normalsize <optional figure>}
+   \includegraphics[draft,width=\textwidth]{USN_logo_en}}
+%% #2 Project partner:
+{<Project partner>}
+%% #3 Summary:
+{%
+\lipsum[6-7]
+}
+
+
+%\chapter*{Preface}
+%\label{ch:preface}
+%\addcontentsline{toc}{chapter}{Preface}
+%\lipsum[1-3]
+%\bigskip
+%Porsgrunn, \today
+
+%\myauthor %% for thesis
+%\myparticipants %% for project
+
+
+%% table of contents
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+
+%\listoffigures % out-comment if unwanted
+%\addcontentsline{toc}{section}{\listfigurename}
+
+%\listoftables  % out-comment if unwanted
+%\addcontentsline{toc}{section}{\listtablename}
+
+
+
+\chapter{Definition of autonomous systems}
+\label{ch:definition}
+\lipsum[4]
+\section{Definitions}
+There are many degrees of definitions for the phrase "autonomous system", which vary in levels of abstraction. 
+As to not repeat the dictionary definitions given in the lectures, I decided to firstly ask the first "AI chatbot" I could find on Google, see Figure \ref{fig:chat-bot}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{AutonomousSystemChatBotDefinition}
+  \caption{An AI chatbot's response to the request of defining the phrase "autonomous system" \cite{ChaiChat90:online}.}
+  \label{fig:chat-bot}
+\end{figure}
+This is close to the exact same definition that can be found in the textbook "Introduction to AI Robotics":
+"Function autonomously" indicates that the robot can operate, self-contained, under all reasonable conditions without requiring recourse to a human operator \cite{murphy2000introduction}.
+A third, very technical definition was found in "Autonomous Systems - An Architectural Characterization" and can be paraphrased \cite{Sifakis}:
+An autonomous system consists of both an agent and a system, the agent contains modules dealing with the fundamental aspects of autonomy.
+These modules are perception, refection, goal management, planning and self-adaptation. How well these features are coordinated relates to how well an agent performs in pursuing its goal.
+And the system relates to sensors and actuators which the agent has to use and operate to perceive its environment and calculate its control strategy.
+
+\section{My definition}
+\label{sec:myDefinition}
+A definition of an autonomous system could be:
+An intelligent system: must be equipped with sensors for perceiving its own and its objectives' positions; 
+have the ability to classify objectives, paths and obstacles; 
+and be able to calculate optimal paths and actions to maximize its chances of success;
+in case of failure the system should independently try to correct the error.
+
+\section{Explanation}
+\label{sec:myExplanation}
+My system is supposed to pick fruit and be an unmanned ground vehicle (UGV).
+So, the definition fits well in the following sense:
+It has to know where it is positioned, where obstacles are and where the path to its objectives (fruit) is.
+It has to tell ripe fruit from unripe and rotten, it should also know what a clear path looks like.
+It needs to be able to control its actuators in an orderly fashion to move between bushes, loading stations, etc. 
+And it has to move arms and claws or such to pick fruit. All without damaging bushes, people, itself, other fruit and more.
+
+\chapter{System Diagrams}
+\label{ch:diagrams}
+\lipsum[4]
+
+\section{Nine window diagram}
+\label{sec:nineWindow}
+\lipsum[4]
+\begin{table}[!ht]
+  \caption{Nine window diagram}
+   \centering
+    \begin{tabular}{ | m{3cm} | m{3cm} | m{3cm} | m{5cm} |}
+     \hline
+     Perspective & Past & Present & Future \\ \hline
+     Super system & Farmer or group of farmers. & Farmer or group of farmers. 
+     & Small scale groups for urban farming or small farms. \\ \hline
+     System & Cheap labor harvesting by hand. & Autonomous harvester. 
+     & Autonomous multipurpose robot for pollinating, weeding, trimming, manuring and more. \\ \hline
+     Sub-system & Propulsion, navigation. & Propulsion, navigation, classification, collection, logistics. 
+     & Tool or mode change, learning, weather/climate regulated. \\ \hline
+     \end{tabular}
+ \end{table}
+
+\section{A frikking cartoon}
+\label{sec:cartoon}
+\lipsum[4]
+
+\section{Context diagram}
+\label{sec:contextDiagram}
+\lipsum[4]
+
+\section{IDEF0 (of the main function)}
+\label{sec:IDEF0}
+\lipsum[4]
+
+\chapter{Impact on society}
+\label{ch:impact}
+\lipsum{4}
+
+Removing jobs, what should people do now?
+Are we losing our humanity?
+
+
+
+\chapter{Legal and ethical aspects}
+\label{ch:legal}
+\lipsum{100}
+
+\chapter{Human interaction(s) of your autonomous system}
+\label{ch:human}
+\lipsum{100}
+
+% A dummy command that causes all bibliographyentries to be displayed
+% even though there were not cited in the document. Used for demonstration
+% purposes only in this template file.
+~\nocite{*}
+
+\cleardoublepage
+
+% The bibliography should be displayed here...
+\printbibliography[heading=bibintoc]
+% You rather like to call the bibliography "References"? Then use this instead:
+%\printbibliography[heading=bibintoc, title={References}]
+
+
+\appendix
+%\renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
+
+
+\chapter[Short Title of Paper A]{Title of Paper A (probably very long and therefore not good to have in the header)}
+\label{paper-a}
+
+\paragraph{Note}
+Since some papers tend to have a rather long title it is good to provide the optional short title which then will be displayed in the table of contents and header instead of the long original title.
+On the openening page of the chapter the orginal \emph{long} title will be displayed.\bigskip
+
+\emph{Short descriptive text of paper follows here.}\bigskip
+
+The paper itself needs to be included in the published form as PDF on the next pages.
+This can be done using the \texttt{pdfpages} package by adding the command:
+
+\begin{verbatim}
+\includepdf{pages=-,openright}{Filename}
+\end{verbatim}
+
+You can omit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
+
+There are more options like only adding specific pages:
+\begin{verbatim}
+\includepdf{pages=2-6,openright}{Filename.pdf}
+\end{verbatim}
+
+For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
+
+
+%%% Command to include a PDF file directly including all pages:
+
+
+\chapter[Short Title of Paper B]{Title of Paper B}
+\label{paper-b}
+Short descriptive text of paper follows here.
+
+Here we included the first five pages of the \texttt{pdfpages} manual itself.
+
+\includepdf[pages=1-5,openright]{fig/pdfpages}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
