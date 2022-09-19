@@ -84,7 +84,7 @@
       <file>MScThesis.bcf</file>
     </requires>
     <requires type="editable">
-      <file>sources.bib</file>
+      <file>MScThesis.bib</file>
     </requires>
   </external>
 </requests>

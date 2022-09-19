@@ -25,7 +25,7 @@ nosummary   %% uncomment if no summary page should be generated
 %\usepackage[style=alphabetic]{biblatex}
 %%% instead.
 %% load the bib file:
-\addbibresource{sources.bib}
+\addbibresource{MScThesis.bib}
 
 \usepackage{lipsum} % just for providing fill text used in this template
 \usepackage{array} % for adjusting tables?
@@ -76,7 +76,7 @@ yoyoyo
 %% #1 optional figure (set to {} if not wanted)
 {%
   {\normalsize <optional figure>}
-   \includegraphics[draft,width=\textwidth]{USN_logo_en}}
+   \includegraphics[draft,width=\textwidth]{USN_logo}}
 %% #2 Project partner:
 {<Project partner>}
 %% #3 Summary:
@@ -204,7 +204,7 @@ Do we lose our humanity when we do less manual labor?
 How is the less gifted affected by increasing requirements in the job market, when simpler jobs are disappearing?
 
 
-
+asdf
 %Removing jobs, what should people do now?
 %Are we losing our humanity?
 %In accident scenarios involving autonomous robots, 
@@ -223,7 +223,7 @@ How is the less gifted affected by increasing requirements in the job market, wh
 
 \chapter{Legal and ethical aspects}
 \label{ch:legal}
-\lipsum{4}
+\lipsum{1}
 
 \section{Discussion}
 \label{sec:legalEthicalAspects}
@@ -234,14 +234,37 @@ The same goes for technology, AI, and autonomy\dots
 
 It is easy to think that the harvester robot will operate in such a safe and open environment that there won't be many or any legal difficulties.
 As with ethical aspects, there might be some aspects where decisions made by the system might be classified as ethically good or bad,
-but the design of the robot should be of such caliber that physical harm should be hard for the robot to inflict.
+but the design of the robot should be of such caliber that physical harm should be hard for the robot to inflict. 
+A steady paced and carefully moving robot could be both advantageous for energy efficiency and for humans or animals coming into contact with the robot.
 
-__The plan__ is to discuss some common concerns with this specific case in mind.
+Gentle logic could also be implemented meaning it shouldn't fight unexpected resistance. 
+So if it experiences unexpected behavior: e.g. the claw doesn't close properly, or it encounters an undetected blockade.
+Then it shouldn't use strength to solve the issue, but rather take a step back and re-analyze.
 
+A small scale robot, say a 10 to 30 kg build, and with a weak motor for the claw, might not have much power that can be used for destruction. 
+But in case of accidents, two points need to be considered: 
+\begin{enumerate}
+  \item Predetermined ethical decision priorities.
+  \item Logging decision reasonings.
+\end{enumerate}
+
+IEEE are working on a series of standards, the P7000-series, to promote ethics in AI \cite{7924235}. 
+The P7001 standard aims to promote transparency and says that decisions made by an autonomous robot should always be traceable. There isn't much of a downside to this, other than requiring slightly more data storage space. It might be a difficult task to translate an AIs decision language into something humans can interpret, especially if the computer relies on one or multiple machine learning models. However, not an impossible task and decision logs can also be very useful to fine-tune main functions of a system.
+
+Predetermined ethical decision prioritization means that generally computers are much quicker at making split-second decisions and computers are deterministic machines. Thus, it will most of the time be possible to fairly decide what to do in a dangerous situation. But what ethics should be practiced in these situations? Should it be purely utilitarian, should a probability model of ethics based on peoples response to numerous trolley-problem dilemmas be used, or should the programmer decide? Truly a difficult question, which should be studied and argued hard in order to answer. But there should be a distinction of strictness of responsibility to this problem depending on a multitude of factors, such as: Should it be used by the common man, e.g. a car? Should it be used in private, closed environments? Should it be operated or managed by trained workers? As the fruit-picker should operate inside a private area, i.e. a farm, it should not be enforced as strict as in other arenas, but still highly recommended for future-proofing and fine-tuning.
 
 \chapter{Human interaction(s) of your autonomous system}
 \label{ch:human}
-\lipsum{100}
+\lipsum{1}
+\section{Human-automation interaction issues}
+\label{sec:humanAutomationIssues}
+A classic problem with human-automation interaction is out-of-loop operators. The system is automated to such a degree that it requires very little attention of the operator during a regular operating state. However, this leads to two factors: firstly, operators get less familiar with the system and less practice operating it manually. Secondly, operators will pay less attention to the system and its surroundings. Both factors resulting in less "situational awareness" for the operator \cite{Gruhn2011HumanMI}. However, this fruit-picker does not carry out as big of a risk during operation compared to oil refinery plants or driving in a car. Think of the fruit-picker like a robotic vacuum or lawn mower, its main purpose is to carry out a boring, repetitive task that is nevertheless low-risk. The worst that should be able to happen if it unexpectedly bugs out and stops working is that a few berries are damaged. And in case of mass failure of multiple units, there will be a problem harvesting in time. \cite{NozzleWi94:online}
+\section{Issues related to level of automation}
+\label{sec:issuesLevelAutomation}
+\lipsum{1}
+\section{Potential threats and opportunities}
+\label{sec:threatsOpportunities}
+\lipsum{1}
 
 % A dummy command that causes all bibliographyentries to be displayed
 % even though there were not cited in the document. Used for demonstration
@@ -251,52 +274,52 @@ __The plan__ is to discuss some common concerns with this specific case in mind.
 \cleardoublepage
 
 % The bibliography should be displayed here...
-\printbibliography[heading=bibintoc]
+%\printbibliography[heading=bibintoc]
 % You rather like to call the bibliography "References"? Then use this instead:
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
 
-\appendix
+%\appendix
 %\renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
 
 
-\chapter[Short Title of Paper A]{Title of Paper A (probably very long and therefore not good to have in the header)}
-\label{paper-a}
+%\chapter[Short Title of Paper A]{Title of Paper A (probably very long and therefore not good to have in the header)}
+%\label{paper-a}
+%
+%\paragraph{Note}
+%Since some papers tend to have a rather long title it is good to provide the optional short title which then will be displayed in the table of contents and header instead of the long original title.
+%On the openening page of the chapter the orginal \emph{long} title will be displayed.\bigskip
+%
+%\emph{Short descriptive text of paper follows here.}\bigskip
+%
+%The paper itself needs to be included in the published form as PDF on the next pages.
+%This can be done using the \texttt{pdfpages} package by adding the command:
+%
+%\begin{verbatim}
+%\includepdf{pages=-,openright}{Filename}
+%\end{verbatim}
+%
+%You can omit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
+%
+%There are more options like only adding specific pages:
+%\begin{verbatim}
+%\includepdf{pages=2-6,openright}{Filename.pdf}
+%\end{verbatim}
 
-\paragraph{Note}
-Since some papers tend to have a rather long title it is good to provide the optional short title which then will be displayed in the table of contents and header instead of the long original title.
-On the openening page of the chapter the orginal \emph{long} title will be displayed.\bigskip
-
-\emph{Short descriptive text of paper follows here.}\bigskip
-
-The paper itself needs to be included in the published form as PDF on the next pages.
-This can be done using the \texttt{pdfpages} package by adding the command:
-
-\begin{verbatim}
-\includepdf{pages=-,openright}{Filename}
-\end{verbatim}
-
-You can omit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
-
-There are more options like only adding specific pages:
-\begin{verbatim}
-\includepdf{pages=2-6,openright}{Filename.pdf}
-\end{verbatim}
-
-For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
+%For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
 
 
 %%% Command to include a PDF file directly including all pages:
 
 
-\chapter[Short Title of Paper B]{Title of Paper B}
-\label{paper-b}
-Short descriptive text of paper follows here.
-
-Here we included the first five pages of the \texttt{pdfpages} manual itself.
-
-\includepdf[pages=1-5,openright]{fig/pdfpages}
-
+%\chapter[Short Title of Paper B]{Title of Paper B}
+%\label{paper-b}
+%Short descriptive text of paper follows here.
+%
+%Here we included the first five pages of the \texttt{pdfpages} manual itself.
+%
+%\includepdf[pages=1-5,openright]{fig/pdfpages}
+%
 \end{document}
 
 %%% Local Variables:
