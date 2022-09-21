@@ -34,7 +34,7 @@ nosummary   %% uncomment if no summary page should be generated
 %% Please fill in the following parameters:
 \newcommand{\mytitle}{%
 %% title:
-yoyoyo
+Assignments for section 1 (W1.2-W1.6)
 }
 
 \newcommand{\mysubtitle}{%
@@ -71,12 +71,24 @@ yoyoyo
 \begin{document}
 
 % --- title page setup ---
+%\USNtitlepage%
+%%% Please provide the following information:
+%%% #1 optional figure (set to {} if not wanted)
+%{%
+%  {\normalsize}
+%  \begin{figure}[!ht]
+%    \centering
+%   \includegraphics[width=0.8\textwidth]{TomatoPickerBot}
+%   \label{fig:tomatoBot}
+% \end{figure}
+%}
+% --- title page setup ---
 \USNtitlepage%
 %% Please provide the following information:
 %% #1 optional figure (set to {} if not wanted)
 {%
   {\normalsize <optional figure>}
-   \includegraphics[draft,width=\textwidth]{USN_logo}}
+   \includegraphics[draft,width=\textwidth]{USN_logo_en}}
 %% #2 Project partner:
 {<Project partner>}
 %% #3 Summary:
@@ -110,7 +122,7 @@ yoyoyo
 
 \chapter{Definition of autonomous systems}
 \label{ch:definition}
-\lipsum[4]
+The following chapter displays different definitions of the phrase "autonomous system".
 \section{Definitions}
 There are many degrees of definitions for the phrase "autonomous system", which vary in levels of abstraction. 
 As to not repeat the dictionary definitions given in the lectures, I decided to firstly ask the first "AI chatbot" I could find on Google, see Figure \ref{fig:chat-bot}
@@ -121,7 +133,8 @@ As to not repeat the dictionary definitions given in the lectures, I decided to 
   \label{fig:chat-bot}
 \end{figure}
 This is close to the exact same definition that can be found in the textbook "Introduction to AI Robotics":
-"Function autonomously" indicates that the robot can operate, self-contained, under all reasonable conditions without requiring recourse to a human operator \cite{murphy2000introduction}.
+"Function autonomously" indicates that the robot can operate, self-contained, under all reasonable conditions without requiring recourse to a human operator 
+\cite{murphy2000introduction}.
 A third, very technical definition was found in "Autonomous Systems - An Architectural Characterization" and can be paraphrased \cite{Sifakis}:
 An autonomous system consists of both an agent and a system, the agent contains modules dealing with the fundamental aspects of autonomy.
 These modules are perception, refection, goal management, planning and self-adaptation. How well these features are coordinated relates to how well an agent performs in pursuing its goal.
@@ -146,11 +159,11 @@ And it has to move arms and claws or such to pick fruit. All without damaging bu
 
 \chapter{System Diagrams}
 \label{ch:diagrams}
-\lipsum[4]
+The following chapter contain diagrams meant to contextualize the system.
 
 \section{Nine window diagram}
 \label{sec:nineWindow}
-\lipsum[4]
+The nine window diagram describes the past, present, and future state of the system, its sub-systems and its user, see table \ref{tab:nineWindow}.
 \begin{table}[!ht]
   \caption{Nine window diagram}
    \centering
@@ -164,19 +177,36 @@ And it has to move arms and claws or such to pick fruit. All without damaging bu
      Sub-system & Propulsion, navigation. & Propulsion, navigation, classification, collection, logistics. 
      & Tool or mode change, learning, weather/climate regulated. \\ \hline
      \end{tabular}
+     \label{tab:nineWindow}
  \end{table}
 
-\section{A frikking cartoon}
+\section{Cartoon}
 \label{sec:cartoon}
-\lipsum[4]
+I can't draw.
 
 \section{Context diagram}
 \label{sec:contextDiagram}
-\lipsum[4]
+
+Figure \ref{fig:contextDiagram} is a context diagram that displays elements involved in the system.
+
+\begin{figure}[!ht]
+  \centering
+ \includegraphics[width=0.8\textwidth]{ContextDiagram}
+ \caption{Context diagram of the system.}
+ \label{fig:contextDiagram}
+\end{figure}
 
 \section{IDEF0 (of the main function)}
 \label{sec:IDEF0}
-\lipsum[4]
+
+The diagram in \ref{fig:idef0} describes the input (left), control (top), resources (bottom), and output (right) of the main system function.
+
+\begin{figure}[!ht]
+  \centering
+ \includegraphics[width=0.8\textwidth]{IDEF0}
+ \caption{Model of the main function for the system.}
+ \label{fig:idef0}
+\end{figure}
 
 \chapter{Impact on society}
 \label{ch:impact}
@@ -204,7 +234,6 @@ Do we lose our humanity when we do less manual labor?
 How is the less gifted affected by increasing requirements in the job market, when simpler jobs are disappearing?
 
 
-asdf
 %Removing jobs, what should people do now?
 %Are we losing our humanity?
 %In accident scenarios involving autonomous robots, 
@@ -223,7 +252,7 @@ asdf
 
 \chapter{Legal and ethical aspects}
 \label{ch:legal}
-\lipsum{1}
+The following chapter contains a brief discussion on legal and ethical aspects of automation and autonomy.
 
 \section{Discussion}
 \label{sec:legalEthicalAspects}
@@ -255,16 +284,27 @@ Predetermined ethical decision prioritization means that generally computers are
 
 \chapter{Human interaction(s) of your autonomous system}
 \label{ch:human}
-\lipsum{1}
+The following chapter contains a brief discussion on human interaction with automated systems.
 \section{Human-automation interaction issues}
 \label{sec:humanAutomationIssues}
 A classic problem with human-automation interaction is out-of-loop operators. The system is automated to such a degree that it requires very little attention of the operator during a regular operating state. However, this leads to two factors: firstly, operators get less familiar with the system and less practice operating it manually. Secondly, operators will pay less attention to the system and its surroundings. Both factors resulting in less "situational awareness" for the operator \cite{Gruhn2011HumanMI}. However, this fruit-picker does not carry out as big of a risk during operation compared to oil refinery plants or driving in a car. Think of the fruit-picker like a robotic vacuum or lawn mower, its main purpose is to carry out a boring, repetitive task that is nevertheless low-risk. The worst that should be able to happen if it unexpectedly bugs out and stops working is that a few berries are damaged. And in case of mass failure of multiple units, there will be a problem harvesting in time. \cite{NozzleWi94:online}
 \section{Issues related to level of automation}
 \label{sec:issuesLevelAutomation}
-\lipsum{1}
+In an array of systems it is advantageous to implement a degree of automation if it isn't already. According to Endsley \cite{article}, there are five levels of automation: none, decision support, consensual AI, monitored AI and full automation. The different levels display varying dependence on human and machine as seen in \ref{fig:levelsOfAuto}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{LevelsOfAutonomy}
+  \caption{Table explaining varying levels of control \cite{article}.}
+  \label{fig:levelsOfAuto}
+\end{figure}
+
+Furthermore, Endsley \cite{article} explores the situational awareness and the decision time of groups performing high-level cognitive tasks: each group aided differently according to the aforementioned levels of automation. Each group solved four tasks with the aid they were assigned, followed up by doing the tasks twice in an "automation failure" scenario. All groups trended towards faster completion times during the four initial tasks and when switched to "automation failure" scenario the first decision always took longer than the second. The difference between first and second completion time in the "failure" scenario is probably explained as a mixture of panic, situational awareness, and training. And, perhaps because of a lack of training, the groups that was helped by the higher degrees of automation used the longest to solve tasks in manual mode after failure. Also, the decrease in decision time between the first and second failure tasks signifies a lack of situation awareness. Another thing that is worth noticing is the fact that the manual and low-level automation groups performed best before and after the failure in terms of decision time. This is important knowledge when designing systems around high-risk systems such as plane autopilots.
+
 \section{Potential threats and opportunities}
 \label{sec:threatsOpportunities}
-\lipsum{1}
+
+Numerous threats are present in any system, and the design of the system should take these into consideration. The goal of the fruit-picker robot is to operate in the 4th degree of automation: monitored AI. Combining machine learning techniques such as classification and reinforcement learning. Classification should be used to tell ripe from unripe berries. Reinforcement learning should be used to 
 
 % A dummy command that causes all bibliographyentries to be displayed
 % even though there were not cited in the document. Used for demonstration
