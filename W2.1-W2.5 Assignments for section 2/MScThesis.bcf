@@ -2357,18 +2357,7 @@
     <bcf:citekey order="2" intorder="1">ChaiChat90:online</bcf:citekey>
     <bcf:citekey order="3" intorder="1">murphy2000introduction</bcf:citekey>
     <bcf:citekey order="4" intorder="1">Sifakis</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">CERNETIC2002167</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">Lavestea6:online</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">Theunemp77:online</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Toavtrej43:online</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">7924235</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Gruhn2011HumanMI</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">NozzleWi94:online</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">article</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">article</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">article</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">article</bcf:citekey>
-    <bcf:citekey order="16" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="5" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
