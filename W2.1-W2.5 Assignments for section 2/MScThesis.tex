@@ -120,41 +120,74 @@ Assignments for section 2 (W2.1-W2.5)
 
 \chapter{Key drivers and systems architecting}
 \label{ch:keyDrivers}
+This chapter includes a discussion on key drivers for the fruit-picker robot.
+\section{Key drivers}
+There are several key drivers or motivations for developing and using the fruit-picker robot. The following are the most apparent:
+Quality, environmentally friendly, decreased OpEx, labor independence, efficiency, punctuality, digitalization, ease of expansion, and ease of maintenance.
+
+Customers:
+Quality should be closely related to a stakeholder requirement of maintaining the produce quality, it should not be acceptable to damage more berries due to robotic picking. Fruit damage due to picking should be decreased due to robotic precision. Customers want the fruits to be in the best condition possible.
+Environmentally friendly, the solution should eliminate the need for foreign workers that produce a lot of emissions due to travel. Understandably, the life cycle assessment for a robot is quite different to a human worker, but should with good practice become a positive decrease over time. The stakeholder requirement will be to keep the emissions as low as possible.
+
+Farmer:
+Decreased OpEx, hiring the robot for the fruit-picking job should yield cheaper operational expenditures compared to human labor. The stakeholder requirement has to be to keep the operational costs as low or lower than using foreign labor. If it is more expensive than the old practice, few farmers will be interested. Stakeholder requirement will be to keep operational costs lower than before.
+Labor independence, the financial situation might improve further so that cheap foreign workers will become unavailable. Using robots will ensure that tools will be available for harvesting the fruit. The stakeholder requirement will be to keep the ability to harvest in a competitive labor market.
+Efficiency, robots can work faster and more energy efficiently than humans. The stakeholder requirement would be that the robot works at least as fast as a human.
+Punctuality, picking timings can be improved to meet market behaviors. If there is an event or simply forecasted good weather, the robots can pick fruit in a timely fashion as to meet the expected demand. This will lead to happier costumers in multiple nodes of the value chain. The stakeholder requirement will be to be able to pick fruit with the same or improved time control compared to current methods.
+Digitalization, knowledge is power. The robots can track and save all kinds of useful information, such as: when and where ripe fruit is collected. Data scientists can potentially combine this data with e.g. weather data to find useful correlations that can be used to improve yields. The stakeholder requirement will be to gather more and reliable statistics.
+Ease of expansion, if the farm is expanding or otherwise needs more robots, it will be easy to configure and calibrate new robots with models developed for the existing robots. The stakeholder requirement is that expansions can be done with a low time investment.
+Ease of maintenance, wear and tear is inevitable, by offering a leasing model, a tight connection between robot supplier and costumer (farmer) will include maintenance deals and quick replacements. Meaning it should be possible to replace a robot on short notice and collect the defunct robot for repairing. This could also go into reliability. The stakeholder requirement will be to minimize downtime due to hardware failure.
 
 \chapter{Key drivers and UN goal}
 \label{ch:keyDriversUn}
 
+\section{What is a sustainable autonomous system?}
+Sustainability is the broad aim for humans to be able to live out their lives on Earth by leaving it in the same or better condition as when they were born \cite{enwiki:1113015553}. Sustainability is made up by the three pillars: environment, economy and society, see figure \ref{fig:whatIsSus}. Sustainable development refers to the path to sustainability and UN has defined 17 development goals in order to reach sustainability. AI and technology, including autonomous systems can both aid and hinder the path towards these goals \cite{vinuesa2020role}. Singular systems can touch upon multiple targets within multiple of the goals and affect them differently. Therefore, a sustainable autonomous system must be a system that greatly favors aiding compared to hindering of the goals and their targets.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{WhatIsSustainability}
+  \caption{Sustainability is the balance between environment, economy and society \cite{enwiki:1113015553}.}
+  \label{fig:whatIsSus}
+\end{figure}
+
+\section{The fruit-pickers key drivers in relation to UNs SDGs}
+Chapter \ref{ch:keyDrivers} shed light on the following key drivers for the berry-picker robot: Quality, environmentally friendly, decreased OpEx, labor independence, efficiency, punctuality, digitalization, ease of expansion, and ease of maintenance.
+The UNs sustainability development goals that are related to the berry-picker might just be all of them in a holistic sense. But the following seem most relatable: 1. No poverty, 2. Zero hunger, 9. Industry, innovation and infrastructure; 10. Reduced inequalities, 11. Sustainable cities and communities, 12. Responsible consumption and production, and 13. Climate action.
+In comparison, these aren't directed specifically to consumer or owner stakeholders in the same sense as the previous key drivers. Rather they are drivers that affect everybody.
 
 \chapter{Safety and security part I}
 \label{ch:safety1}
+Safety is related to accidents, unplanned mishaps. Measures can be taken to reduce risk and increase safety. E.g., a worker falling from an unsafe height and damaging themselves, securing them with a safety harness can reduce the risk.
+Security is related to keeping something safe or resilient from outside actors. E.g., strongly coded security layers to prevent hacking and theft of the robot.
 
+Potential safety issues:
+Berry destruction
+Robot damage
+Human damage
+Animal damage
+Plant damage
+Fire
+
+
+Potential security issues:
+theft
+hacking
+vandalism
+Animal attacks
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{RobotAttackingMoose}
+  \caption{An angry moose unleashed on a robot lawnmower.}
+  \label{fig:anAngryMoose}
+\end{figure}
 
 \chapter{Safety and security part II}
 \label{ch:safety2}
 
 \chapter{Business cases}
 \label{ch:Business}
-
-
-\chapter{Definition of autonomous systems}
-\label{ch:definition}
-The following chapter displays different definitions of the phrase "autonomous system".
-\section{Definitions}
-There are many degrees of definitions for the phrase "autonomous system", which vary in levels of abstraction. 
-As to not repeat the dictionary definitions given in the lectures, I decided to firstly ask the first "AI chatbot" I could find on Google, see Figure \ref{fig:chat-bot}
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.8\textwidth]{AutonomousSystemChatBotDefinition}
-  \caption{An AI chatbot's response to the request of defining the phrase "autonomous system" \cite{ChaiChat90:online}.}
-  \label{fig:chat-bot}
-\end{figure}
-This is close to the exact same definition that can be found in the textbook "Introduction to AI Robotics":
-"Function autonomously" indicates that the robot can operate, self-contained, under all reasonable conditions without requiring recourse to a human operator 
-\cite{murphy2000introduction}.
-A third, very technical definition was found in "Autonomous Systems - An Architectural Characterization" and can be paraphrased \cite{Sifakis}:
-An autonomous system consists of both an agent and a system, the agent contains modules dealing with the fundamental aspects of autonomy.
-These modules are perception, refection, goal management, planning and self-adaptation. How well these features are coordinated relates to how well an agent performs in pursuing its goal.
-And the system relates to sensors and actuators which the agent has to use and operate to perceive its environment and calculate its control strategy.
 
 
 % A dummy command that causes all bibliographyentries to be displayed
@@ -167,7 +200,7 @@ And the system relates to sensors and actuators which the agent has to use and o
 % The bibliography should be displayed here...
 %\printbibliography[heading=bibintoc]
 % You rather like to call the bibliography "References"? Then use this instead:
-\printbibliography[heading=bibintoc, title={References}]
+%\printbibliography[heading=bibintoc, title={References}]
 
 
 %\appendix
