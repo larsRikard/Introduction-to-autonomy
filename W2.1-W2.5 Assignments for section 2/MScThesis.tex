@@ -29,6 +29,7 @@ nosummary   %% uncomment if no summary page should be generated
 
 \usepackage{lipsum} % just for providing fill text used in this template
 \usepackage{array} % for adjusting tables?
+\usepackage{pdflscape} % for landscape pages
 
 % --- general setup ---
 %% Please fill in the following parameters:
@@ -158,6 +159,9 @@ In comparison, these aren't directed specifically to consumer or owner stakehold
 
 \chapter{Safety and security part I}
 \label{ch:safety1}
+This chapter contains a discussion on safety and security threats for the fruit-picker robot.
+\section{Safety and security discussion}
+
 Safety is related to accidents, unplanned mishaps. Measures can be taken to reduce risk and increase safety. E.g., a worker falling from an unsafe height and damaging themselves, securing them with a safety harness can reduce the risk.
 Security is related to keeping something safe or resilient from outside actors. E.g., strongly coded security layers to prevent hacking and theft of the robot.
 
@@ -175,10 +179,58 @@ Security is always important, perhaps especially in modern times with respects t
 
 \chapter{Safety and security part II}
 \label{ch:safety2}
+This chapter contains a HAZID analysis of the fruit-picker robot.
+\section{HAZID}
+The HAZID table can be found in table \ref{tab:hazid}.
+
+\begin{landscape}
+\begin{table}[!ht]
+  \caption{HAZID of the fruit-picker robot.}
+   \centering
+    \begin{tabular}{ | m{2cm} | m{2cm} | m{1cm} | m{3cm} | m{3cm} | m{3cm} | m{2cm} | m{2cm} | m{2cm} |}
+     \hline
+     System/ Activity & Hazard/ Threat & No. & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     Motor & Mechanical failure & 1 & Bad robot control. & Wear and tear, dirty, electric fault, bad design or manufacturing problem. & Crash with other robots, people or objects. & Freq.: 1 Cons.: 4 RPN: 5 & Condition monitoring, maintenance, QA. & System designer, operator. \\ \hline
+
+     Arm & Mechanical failure & 2 & Bad robot control & Wear and tear, dirty, electric fault, bad design or manufacturing problem. & Crash with other robots, people or objects. & Freq.: 1 Cons.: 4 RPN: 5 & Condition monitoring, maintenance, QA. & System designer, operator. \\ \hline
+
+     Navigation & Misrouting & 3 & Navigate outside of boundaries or down a hill that is too steep. & Bad navigation model, damaged or dirty sensors, malfunctioning GPS module & Robot could get lost or damaged due to falling. Harvesting stop. & Freq.: 2 Cons.: 5 RPN: 7 & Condition monitoring, maintenance, sensor redundancy, strict configuration. & System designer, operator. \\ \hline
+
+     Camera & Privacy & 4 & People can be recorded without permission & Pedestrians can get recorded on accident. & GDPR law suit. & Freq.: 1 Cons.: 7 RPN: 8 & Put up warning signs. & Operator. \\ \hline
+
+     Identification model & Misidentification & 5 & Picking and sorting ripe, unripe, damaged fruit wrong. & Sensory damage or noise, bad identification model. & Decreased yield: berries stay unpicked or get picked prematurely. & Freq.: 4 Cons.: 8 RPN: 12 & Monitor the success rate of this task. Expand the dataset for improved ML models. & Designer, leasing company and operator. \\ \hline
+
+     Berry unloading & Hazard & 6 & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     Berry picking & Hazard & 7 & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     System/ Activity & Hazard & 8 & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     System/ Activity & Hazard & 9 & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     System/ Activity & Hazard & 10 & Event & Cause & Consequence & Risk & Measures & Responsible \\ \hline
+
+     \end{tabular}
+     \label{tab:hazid}
+ \end{table}
+\end{landscape}
+
 
 \chapter{Business cases}
 \label{ch:Business}
+This chapter contains a business canvas model of the autonomous fruit-picker company.
+\section{Business model canvas}
+The business model canvas can be found in figure \ref{fig:BMC}
 
+\begin{landscape}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.4\textwidth]{BusinessModelCanvas}
+    \caption{Business model canvas for the autonomous fruit-picker company.}
+    \label{fig:BMC}
+  \end{figure}
+\end{landscape}
 
 % A dummy command that causes all bibliographyentries to be displayed
 % even though there were not cited in the document. Used for demonstration
@@ -190,7 +242,7 @@ Security is always important, perhaps especially in modern times with respects t
 % The bibliography should be displayed here...
 %\printbibliography[heading=bibintoc]
 % You rather like to call the bibliography "References"? Then use this instead:
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
 
 %\appendix
