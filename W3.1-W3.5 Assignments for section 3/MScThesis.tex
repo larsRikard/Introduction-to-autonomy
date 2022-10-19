@@ -1,0 +1,214 @@
+%% sample template file for a MSc Thesis
+%% The default is with two sided setup:
+\documentclass[%
+oneside,    %% uncomment for onesided layout
+project,    %% uncomment not thesis but project report
+nosummary   %% uncomment if no summary page should be generated
+]{USN-MSc}
+
+% The following command removes the chapter names form the header
+% (comment/remove) if you prefer to have them:
+\pagestyle{plain}
+
+% --- Bibliography setup ---
+%%% default is the "ieee" style
+\usepackage[style=ieee, sorting=none]{biblatex}
+%%% If you want to use "author-year" style
+%%% where `\cite{Foo2011}` generates "Foo et al. (2011)"
+%%% and   `\parencite{Foo2011}` generates "(Foo et al. 2011)"
+%%% then comment the line above and use
+%\usepackage[style=authoryear]{biblatex}
+%%% or
+%%% if you want to use "alphabetic" style then use
+%%% where `cite[Foo2011]` generates "[Foo11]"
+%%% then comment the line above and use
+%\usepackage[style=alphabetic]{biblatex}
+%%% instead.
+%% load the bib file:
+\addbibresource{MScThesis.bib}
+
+\usepackage{lipsum} % just for providing fill text used in this template
+\usepackage{array} % for adjusting tables?
+\usepackage{pdflscape} % for landscape pages
+
+% --- general setup ---
+%% Please fill in the following parameters:
+\newcommand{\mytitle}{%
+%% title:
+Assignments for section 3 (W3.1-W3.5)
+}
+
+\newcommand{\mysubtitle}{%
+%% master programme (for thesis only)
+%% uncomment the appropriate one:
+%%Electrical Power Engineering
+%Energy and Environmental Technology
+%Industrial IT and Automation
+%Process Technology
+}
+
+\newcommand{\mykeywords}{%
+%% keywords (for thesis only):
+<keyword one, keyword two, \ldots>
+}
+
+\newcommand{\myauthor}{%
+%% author(thesis) or group code (project):
+223786 Lars Rikard Rådstoga
+}
+
+\newcommand{\myparticipants}{
+%% group participants (for project only)
+<First participant>\\
+<Second participant>\\
+<Third participant>\\
+<Fourth participant>
+}
+
+\newcommand{\supervisor}{%
+%% supervisor:
+<Supervisor's Name>}
+
+\begin{document}
+
+% --- title page setup ---
+%\USNtitlepage%
+%%% Please provide the following information:
+%%% #1 optional figure (set to {} if not wanted)
+%{%
+%  {\normalsize}
+%  \begin{figure}[!ht]
+%    \centering
+%   \includegraphics[width=0.8\textwidth]{TomatoPickerBot}
+%   \label{fig:tomatoBot}
+% \end{figure}
+%}
+% --- title page setup ---
+\USNtitlepage%
+%% Please provide the following information:
+%% #1 optional figure (set to {} if not wanted)
+{%
+  {\normalsize}
+   \includegraphics[width=\textwidth]{TomatoPickerBot}}
+%% #2 Project partner:
+{<Project partner>}
+%% #3 Summary:
+{%
+\lipsum[6-7]
+}
+
+
+%\chapter*{Preface}
+%\label{ch:preface}
+%\addcontentsline{toc}{chapter}{Preface}
+%\lipsum[1-3]
+%\bigskip
+%Porsgrunn, \today
+
+%\myauthor %% for thesis
+%\myparticipants %% for project
+
+
+%% table of contents
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+
+%\listoffigures % out-comment if unwanted
+%\addcontentsline{toc}{section}{\listfigurename}
+
+%\listoftables  % out-comment if unwanted
+%\addcontentsline{toc}{section}{\listtablename}
+
+\chapter{System diagram for the chosen autonomous system}
+\label{ch:sysDiagram}
+\lipsum(1)
+\section{Introduction of the system}
+\lipsum(1)
+\section{System diagram}
+\lipsum(1)
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{RobotAttackingMoose}
+  \caption{System diagram with focus on data input and internal data flow.}
+  \label{fig:sysDiagram}
+\end{figure}
+
+
+\chapter{How to organize software for autonomous systems}
+\label{ch:softOrganz}
+\lipsum(1)
+\section{Reflection}
+\lipsum(1)
+
+\chapter{Information collection}
+\label{ch:infoCol}
+\lipsum(1)
+\section{Reflection}
+\lipsum(1)
+
+\chapter{Learning}
+\label{ch:learn}
+\lipsum(1)
+\section{Reflection}
+\lipsum(1)
+
+% A dummy command that causes all bibliographyentries to be displayed
+% even though there were not cited in the document. Used for demonstration
+% purposes only in this template file.
+~\nocite{*}
+
+\cleardoublepage
+
+% The bibliography should be displayed here...
+%\printbibliography[heading=bibintoc]
+% You rather like to call the bibliography "References"? Then use this instead:
+\printbibliography[heading=bibintoc, title={References}]
+
+
+%\appendix
+%\renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
+
+
+%\chapter[Short Title of Paper A]{Title of Paper A (probably very long and therefore not good to have in the header)}
+%\label{paper-a}
+%
+%\paragraph{Note}
+%Since some papers tend to have a rather long title it is good to provide the optional short title which then will be displayed in the table of contents and header instead of the long original title.
+%On the openening page of the chapter the orginal \emph{long} title will be displayed.\bigskip
+%
+%\emph{Short descriptive text of paper follows here.}\bigskip
+%
+%The paper itself needs to be included in the published form as PDF on the next pages.
+%This can be done using the \texttt{pdfpages} package by adding the command:
+%
+%\begin{verbatim}
+%\includepdf{pages=-,openright}{Filename}
+%\end{verbatim}
+%
+%You can omit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
+%
+%There are more options like only adding specific pages:
+%\begin{verbatim}
+%\includepdf{pages=2-6,openright}{Filename.pdf}
+%\end{verbatim}
+
+%For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
+
+
+%%% Command to include a PDF file directly including all pages:
+
+
+%\chapter[Short Title of Paper B]{Title of Paper B}
+%\label{paper-b}
+%Short descriptive text of paper follows here.
+%
+%Here we included the first five pages of the \texttt{pdfpages} manual itself.
+%
+%\includepdf[pages=1-5,openright]{fig/pdfpages}
+%
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
