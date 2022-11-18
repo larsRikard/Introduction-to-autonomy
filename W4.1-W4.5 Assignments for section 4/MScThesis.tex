@@ -93,12 +93,12 @@ Assignments for section 4 (W4.1-W4.5)
 %% #1 optional figure (set to {} if not wanted)
 {%
   {\normalsize}
-   \includegraphics[width=\textwidth]{TomatoPickerBot}}
+  \includegraphics[width=\textwidth]{TomatoPickerBot}}
 %% #2 Project partner:
 {<Project partner>}
 %% #3 Summary:
 {%
-\lipsum[6-7]
+  \lipsum[6-7]
 }
 
 
@@ -137,10 +137,10 @@ To better understand the required capabilities of an autonomous system it is sen
   \label{fig:fourSliders}
 \end{figure}
 
-The four sliders impact the degree of complexity of the system. 
+The four sliders impact the degree of complexity of the system.
 A higher degree of autonomy implies on-the-go planning, this means that a system could be able to adapt and prioritize tasks in order to minimize cost functions. It can perform big-picture planning by actively doing tasks such as coordinating with other actors, considering refueling timing, and more to minimize usage costs.
 
-Autonomous systems' actions adapt to wear and tear or change in environment by using noisy sensors and closed-loop control algorithms. The more open and the less static the world is, more features need to take action like this. Some applications such as assembly in a factory will be operable with few or no sensory feedback, but robots like the Mars Rover will need a lot so it can operate cautiously. 
+Autonomous systems' actions adapt to wear and tear or change in environment by using noisy sensors and closed-loop control algorithms. The more open and the less static the world is, more features need to take action like this. Some applications such as assembly in a factory will be operable with few or no sensory feedback, but robots like the Mars Rover will need a lot so it can operate cautiously.
 
 The world model also impacts the degree of autonomy. In closed world examples, predictable environments such as a part of a factory, most of the world will be known a priori. In open world scenarios, however, the ground might be uneven or dirt can shift around. Objectives won't always appear in the same spots, etc. Open world models include less a priori information and more will be discovered a posteriori.
 
@@ -175,7 +175,7 @@ Industrial plants today are already automated to a high degree and require opera
   \label{fig:Fig1Article1}
 \end{figure}
 
-The scale between automation and autonomy is defined in different ways according to the field of study. Whether it is possible to implement autonomy to industrial settings depend on the definition of said scale. A definition of encapsulating categories of industrial systems can be seen in \ref{fig:Fig1Article2}. The automated system contains systematic process execution which can be as simple as hard coded arrays of coordinates and paths for a robot arm to follow. An intelligent automation system would in addition use sensory data to adapt to obstacles in the robot arms path, redirecting it. To truly reach autonomy the arm should also have self-governance and self-containedness. Self-governance meaning it should be able to do several high-level tasks like cooperating and decision-making without external help. Self-containedness is another branch of high-level tasks such as self-explanation and holistic affiliation, see figure \ref{fig:Tab3Article2} for explanations of some of these words. 
+The scale between automation and autonomy is defined in different ways according to the field of study. Whether it is possible to implement autonomy to industrial settings depend on the definition of said scale. A definition of encapsulating categories of industrial systems can be seen in \ref{fig:Fig1Article2}. The automated system contains systematic process execution which can be as simple as hard coded arrays of coordinates and paths for a robot arm to follow. An intelligent automation system would in addition use sensory data to adapt to obstacles in the robot arms path, redirecting it. To truly reach autonomy the arm should also have self-governance and self-containedness. Self-governance meaning it should be able to do several high-level tasks like cooperating and decision-making without external help. Self-containedness is another branch of high-level tasks such as self-explanation and holistic affiliation, see figure \ref{fig:Tab3Article2} for explanations of some of these words.
 
 \begin{figure}[!ht]
   \centering
@@ -199,9 +199,7 @@ The scale between automation and autonomy is defined in different ways according
 This chapter contains a definition of operational boundaries for the fruit-picker system.
 \section{Definition}
 
-Operational boundaries or operational design domain (ODD) is a definition of a systems operational area and constraints \cite{norwegiandefinitions}. This concerns the environment, equipment, and operations. 
-Dynamic navigation task (DNT) is a set of tactical operations supported to operate in the ODD.
-DNT Fallback is the predefined emergency procedure when ODD is exceeded.
+Operational design domain (ODD) is a definition of a systems operational environment and complexity it needs to handle. This concerns the area, equipment, operations, and expected contribution from humans \cite{norwegiandefinitions}. The dynamic navigation task (DNT) is defined as the sum of all tasks needed to by the system and humans to handle all requirements set by the ODD \cite{norwegiandefinitions}. DNT is further split up into automatic tasks for the system to handle, operative exclusive tasks for humans to handle, and fallback tasks for safety in case situations outside the defined domain arises. Figure \ref{fig:OpBoundsEx} displays a visualization of this relationship.
 
 \begin{figure}[!ht]
   \centering
@@ -210,13 +208,73 @@ DNT Fallback is the predefined emergency procedure when ODD is exceeded.
   \label{fig:OpBoundsEx}
 \end{figure}
 
-\section{Operator exclusive control}
+\section{Operational design domain}
+The operational design domain for the fruit-picker robot should be an outdoor field in specifically geographically enclosed areas. The ground is often plastic or cloth around plants and the ground between them can be soil, hay, or bark. Fruit will grow on either bushes close to ground level or on trees. Any non-extreme weather conditions should be targeted. Farming is mainly not a winter activity, so it should be safe to target warmer weathers, i.e.: above 0℃.
 
+Most tasks should be automatic, including: navigation between POIs, charging, loading/unloading collection baskets, fruit identification, fruit picking, anti-collision, interaction with other agents, operational condition reporting, data recording, actuator control, operations logging, and possibly more.
+
+A handful of tasks should be carried out by human operators, such as: cleaning, maintenance, initialization, anomaly monitoring, and more.
+
+Fallback procedures would be a few, but not limited to: safety stop, anti-theft lockdown, and reporting/signaling unexpected failure or damage.
 
 \chapter{Overall capabilities of the fruit-picker system}
 \label{ch:overalCap}
 This chapter contains a description of all required capabilities: level of autonomy, main task description, HMI, and requirements for the robotic framework.
-\section{Description}
+\section{Level of autonomy}
+
+The level of autonomy required for the fruit-picker robot is generally high. The degree of autonomy might even be viewed as a piecewise function of time with the degree of autonomy varying between different tasks. Imagine the sliders in figure \ref{fig:fourSlidersFruit} changing from task to task and the figure displaying a potential average.
+
+Planning capabilities of the system has to be generative to a high degree for most cases. This is because it will have tasks that will have varying solutions, every bush or tree will be different with fruit positioned differently, with variations in shape and color. It will be heavily reliant on sensory input which can be also be noisy from a multitude of reasons such as sensory, temporary disturbances like dirty equipment, changing environments, and more. So planning will need to be generative to adapt to lots of variations.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.80\textwidth, frame]{FourSlidersOfAutonomyFruitPicker}
+  \caption{The four sliders of autonomy, reflecting degrees of autonomy required for the fruit-picker system \cite{murphy2000introduction}.}
+  \label{fig:fourSlidersFruit}
+\end{figure}
+
+Actions will follow as mostly non-deterministic it will have to carry out tasks in an arguably stochastic world, will depend on noisy sensors and perhaps changing inner timings. The tasks such as identifying paths and obstacles, traversing them and similar with fruit picking will wary with every execution, starting points and goals will also never be truly equal.
+
+World modelling will be performed with multiple layers. The boundaries of fields, defining the operational area will be static like in closed world models. However, within the closed world there will be both closed and open-world elements. The main outlines of plant and path locations will likely be useful initial information if it is easily available, but it should be hard to create properly. So for most things within the bounded world it will have to keep an open-world assumption. Boundary and coarse maps should be combined with LIDAR and camera data to aid the robot identify the open-world. So it should have some idea of where to move to find fruit, but know that things that move around and doesn't look like fruit might be something it should be careful of.
+
+Knowledge should be converted to symbols in order to make the agent intelligent. This means that objectives, tasks and otherwise relevant items should be presented as abstractions or symbols. This means that it should have some idea of what it is doing.
+
+\section{Description of main tasks}
+
+\begin{table}[!ht]
+  \caption{Main task breakdown.}
+  \centering
+  \begin{tabular}{| m{1.5cm} | m{2cm} | m{1cm} | m{5cm} |}
+    \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{1. Car navigation}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{2. Driving}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{3. Observation}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{4. Identification}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{5. Arm navigation}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{6. Arm steering}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{7. Safety/Security}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{8. Cargo}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+    \multicolumn{4}{|l|}{7. Safety/Security}        \\ \hline
+    Main group & Sub-group & Use & Description \\ \hline
+  \end{tabular}
+  \label{tab:breakdown}
+\end{table}
+
+
+\section{Human-machine interaction}
+
+\section{Requirements for a robotic framework}
+
+
 
 % A dummy command that causes all bibliographyentries to be displayed
 % even though there were not cited in the document. Used for demonstration

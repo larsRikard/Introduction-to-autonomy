@@ -6,3 +6,6 @@ setpoints
 setpoint
 self-containedness
 Self-containedness
+piecewise
+Rviz
+POIs
