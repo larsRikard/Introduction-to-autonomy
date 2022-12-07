@@ -9,3 +9,6 @@ Self-containedness
 piecewise
 Rviz
 POIs
+Rikard
+Rådstoga
+Vestfold
