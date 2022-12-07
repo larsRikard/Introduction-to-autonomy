@@ -143,7 +143,7 @@ And the system relates to sensors and actuators which the agent has to use and o
 \section{My definition}
 \label{sec:myDefinition}
 A definition of an autonomous system could be:
-An intelligent system: must be equipped with sensors for perceiving its own and its objectives' positions; 
+An intelligent system must be equipped with sensors for perceiving its own and its objectives' positions; 
 have the ability to classify objectives, paths and obstacles; 
 and be able to calculate optimal paths and actions to maximize its chances of success;
 in case of failure the system should independently try to correct the error.
@@ -169,13 +169,22 @@ The nine window diagram describes the past, present, and future state of the sys
    \centering
     \begin{tabular}{ | m{3cm} | m{3cm} | m{3cm} | m{5cm} |}
      \hline
-     Perspective & Past & Present & Future \\ \hline
-     Super system & Farmer or group of farmers. & Farmer or group of farmers. 
-     & Small scale groups for urban farming or small farms. \\ \hline
-     System & Cheap labor harvesting by hand. & Autonomous harvester. 
-     & Autonomous multipurpose robot for pollinating, weeding, trimming, manuring and more. \\ \hline
-     Sub-system & Propulsion, navigation. & Propulsion, navigation, classification, collection, logistics. 
-     & Tool or mode change, learning, weather/climate regulated. \\ \hline
+     Perspective 
+     & Past 
+     & Present 
+     & Future \\ \hline
+     Super system 
+     & Farm. 
+     & Farm. 
+     & Farm. \\ \hline
+     System 
+     & Cheap labor harvesting by hand. 
+     & Autonomous harvester. 
+     & Autonomous multipurpose robot for pollinating, weeding, trimming, manuring, harvesting and more. \\ \hline
+     Sub-system 
+     & Gardening equipment, utilities for humans, baskets. 
+     & Robot body, wheels, motor for wheels, wheel motor control, robot arm, scissor/claw or similar, arm and scissor motor, arm/scissor control, sensors, maintenance, batteries, baskets, fruit, communication, and more.
+     & Same as previous, tool changing station, self-maintenance.\\ \hline
      \end{tabular}
      \label{tab:nineWindow}
  \end{table}
@@ -187,7 +196,7 @@ Figure \ref{fig:cartoon} displays a rough start to finish cycle of the system, s
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{Cartoon}
+  \includegraphics[width=0.8\textwidth]{ConOps}
   \caption{A quick sketch visualizing the system functions.}
   \label{fig:cartoon}
 \end{figure}
@@ -267,7 +276,7 @@ The following chapter contains a brief discussion on legal and ethical aspects o
 
 Most things are dangerous in the hands of people with evil intentions. Knives are useful in the kitchen,
 but they can also be murder weapons. Everybody needs water to survive, but floods can destroy houses and people can die of drowning.
-The same goes for technology, AI, and autonomy\dots
+The same goes for technology, AI, and autonomy.
 
 It is easy to think that the harvester robot will operate in such a safe and open environment that there won't be many or any legal difficulties.
 As with ethical aspects, there might be some aspects where decisions made by the system might be classified as ethically good or bad,
@@ -288,7 +297,8 @@ But in case of accidents, two points need to be considered:
 IEEE are working on a series of standards, the P7000-series, to promote ethics in AI \cite{7924235}. 
 The P7001 standard aims to promote transparency and says that decisions made by an autonomous robot should always be traceable. There isn't much of a downside to this, other than requiring slightly more data storage space. It might be a difficult task to translate an AIs decision language into something humans can interpret, especially if the computer relies on one or multiple machine learning models. However, not an impossible task and decision logs can also be very useful to fine-tune main functions of a system.
 
-Predetermined ethical decision prioritization means that generally computers are much quicker at making split-second decisions and computers are deterministic machines. Thus, it will most of the time be possible to fairly decide what to do in a dangerous situation. But what ethics should be practiced in these situations? Should it be purely utilitarian, should a probability model of ethics based on peoples response to numerous trolley-problem dilemmas be used, or should the programmer decide? Truly a difficult question, which should be studied and argued hard in order to answer. But there should be a distinction of strictness of responsibility to this problem depending on a multitude of factors, such as: Should it be used by the common man, e.g. a car? Should it be used in private, closed environments? Should it be operated or managed by trained workers? As the fruit-picker should operate inside a private area, i.e. a farm, it should not be enforced as strict as in other arenas, but still highly recommended for future-proofing and fine-tuning.
+Predetermined ethical decision prioritization is possible to implement in robots because computers are deterministic, and they can react a lot quicker than humans. Thus, it will most of the time be possible to fairly decide what to do in a dangerous situation.
+But what ethics should be practiced in these situations? Should it be purely utilitarian, should a probability model of ethics based on peoples response to numerous trolley-problem dilemmas be used, or should the programmer decide? Truly a difficult question, which should be studied and argued hard in order to answer. But there should be a distinction of strictness of responsibility to this problem depending on a multitude of factors, such as: Should it be used by the common man, e.g. a car? Should it be used in private, closed environments? Should it be operated or managed by trained workers? As the fruit-picker should operate inside a private area, i.e. a farm, it should not be enforced as strict as in other arenas, but still highly recommended for future-proofing and fine-tuning.
 
 \chapter{Human interaction(s) of your autonomous system}
 \label{ch:human}
@@ -312,7 +322,7 @@ Furthermore, Endsley \cite{article} explores the situational awareness and the d
 \section{Potential threats and opportunities}
 \label{sec:threatsOpportunities}
 
-Numerous threats are present in any system, and the design of the system should take these into consideration. The goal of the fruit-picker robot is to operate in the 4th degree of automation: monitored AI. Combining machine learning techniques such as classification and reinforcement learning. Classification should be used to tell ripe from unripe berries. Reinforcement learning should be used to 
+Numerous threats are present in any system, and the design of the system should take these into consideration. The goal of the fruit-picker robot is to operate in the 4th degree of automation: monitored AI. Combining machine learning techniques such as classification and reinforcement learning. Classification should be used to tell ripe from unripe berries. Reinforcement learning should be used to teach the robot how to move around, rewarding it for careful movements and punishing it for turbulences.
 
 % A dummy command that causes all bibliographyentries to be displayed
 % even though there were not cited in the document. Used for demonstration
